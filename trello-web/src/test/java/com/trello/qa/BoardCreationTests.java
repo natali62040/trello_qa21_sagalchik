@@ -16,12 +16,7 @@ public class BoardCreationTests extends TestBase {
         click(By.xpath("//*[@class='_3UeOvlU6B5KUnS uj9Ovoj4USRUQz _2MgouXHqRQDP_5']"));
     }
 
-    public boolean isUserLoggedOut() {
-        return isElementPresent(By.cssSelector("[href=\"/login\"]"));
-    }
 
-    public boolean isElementPresent(By locator) {
-        return driver.findElements(locator).size() > 0;
 
-    }
+
 }

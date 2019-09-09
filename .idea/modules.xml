@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello-web.iml" filepath="$PROJECT_DIR$/.idea/modules/trello-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello-web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/trello-web.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello-web.test.iml" filepath="$PROJECT_DIR$/.idea/modules/trello-web.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/trello_qa21_sagalchik.iml" filepath="$PROJECT_DIR$/.idea/trello_qa21_sagalchik.iml" />
     </modules>
   </component>
 </project>
