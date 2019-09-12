@@ -16,6 +16,10 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() {
+        init();
+    }
+
+    public void init() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();//max screen
@@ -48,8 +52,13 @@ public class TestBase {
     @AfterClass
     public void tearDown() {
 
+        stop();
+    }
+
+    public void stop() {
         driver.quit();
     }
+
     public boolean isUserLoggedIn() {
         return isElementPresent(By.cssSelector("[data-test-id='header-member-menu-button']"));
     }
@@ -104,7 +113,7 @@ public class TestBase {
     }
 
     public void clickOnPlusButtonOnLeftNavMenu() {
-        click(By.xpath("//*[@name='add']"));
+        waitForElementAndClick(By.xpath("//*[@name='add']"),15);
     }
 
     public void deleteTeam() {
@@ -172,5 +181,10 @@ public class TestBase {
 
     public void clickOnFirstBoard() {
         click(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li[1]"));
+    }
+
+    public void waitForElementAndClick(By locator, int time){
+        new WebDriverWait(driver, time)
+                .until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 }

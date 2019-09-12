@@ -32,11 +32,11 @@ public class TeamCreationTests extends TestBase {
         String createdTeamName = getTeamNameFromTeamPage();
         returnToHomePage();
         int after = getTeamsCount();
-       Assert.assertEquals(after, before+1);
+        Assert.assertEquals(after, before+1);
         Assert.assertEquals(createdTeamName.toLowerCase(),teamName.toLowerCase());
     }
 
-    @Test
+    @Test(enabled = false)
     public void testTeamCreationFromLeftNavMenu() throws InterruptedException {
         int before = getTeamsCount();
         clickOnPlusButtonOnLeftNavMenu();

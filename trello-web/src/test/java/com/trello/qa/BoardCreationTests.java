@@ -32,12 +32,14 @@ public class BoardCreationTests extends TestBase {
         selectCreateBoardFromDropDown();
         String boardName = "My plan3";
         fillBoardCreationForm(boardName);
+        click(By.xpath("//*[@class='_1vk4y48RR5OmqE']"));
+        click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
         clickCreateButton();
         String createdBoardName = getBoardNameFromBoardPage();
         returnToHomePage();
         int after = getBoardsCount();
         Assert.assertEquals(after, before+1);
-       // Assert.assertEquals(createdBoardName.toLowerCase(), boardName.toLowerCase());
+        Assert.assertEquals(createdBoardName.toLowerCase(), boardName.toLowerCase());
     }
 
 
