@@ -104,6 +104,49 @@ public class TestBase {
     }
 
     public void clickOnPlusButtonOnLeftNavMenu() {
-        click(By.cssSelector(".icon-add.icon-sm "));
+        click(By.xpath("//*[@name='add']"));
+    }
+
+    public void deleteTeam() {
+        new WebDriverWait(driver,10)
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector(".quiet-button")));
+        click(By.cssSelector(".quiet-button"));
+        click(By.cssSelector(".js-confirm"));
+    }
+
+    public void openSettings() {
+        click(By.cssSelector(".icon-gear.icon-sm.OiX3P2i2J92Xat"));
+    }
+
+    public void clickOnFirstTeam() {
+        click(By.xpath("//*[@class='_mtkwfAlvk6O3f']/../../..//li"));
+    }
+
+    protected String getBoardNameFromBoardPage() {
+        return driver.findElement(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li[1]")).getText();
+    }
+
+    public void clickCreateButton() {
+        click(By.xpath("//*[@class='_3UeOvlU6B5KUnS uj9Ovoj4USRUQz _2MgouXHqRQDP_5']"));
+    }
+
+    public void fillBoardCreationForm(String boardName) {
+        type(By.xpath("//*[@class ='_23NUW98LaZfBpQ']"),boardName);//*[@class ='_23NUW98LaZfBpQ']
+    }
+
+    public void selectCreateBoardFromDropDown() {
+        click(By.xpath("//*[contains(text(),'Create Board')]"));
+    }
+
+    public int getBoardsCount() {
+        new WebDriverWait(driver,10).
+                until(ExpectedConditions.presenceOfElementLocated
+                        (By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li")));
+        return
+                driver.findElements(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li")).size();
+    }
+
+    public boolean isTherePersonalBoards() {
+        return isElementPresent(By.xpath("//*[@class='icon-lg icon-member']/../../.."));
     }
 }
