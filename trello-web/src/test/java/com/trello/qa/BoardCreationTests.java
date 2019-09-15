@@ -1,9 +1,6 @@
 package com.trello.qa;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -13,31 +10,31 @@ public class BoardCreationTests extends TestBase {
 
     @BeforeClass
     public void ensurePreconditions(){
-        if(!isUserLoggedIn()){
-            login("natalisagalchik@gmail.com", "Sn271206");
+        if(!app.isUserLoggedIn()){
+            app.login("natalisagalchik@gmail.com", "Sn271206");
         }
     }
 
     @BeforeMethod
     public void isOnHomePage(){
-        if(! isTherePersonalBoards()){
-            returnToHomePage();
+        if(! app.isTherePersonalBoards()){
+            app.returnToHomePage();
         }
     }
 
     @Test//(enabled = false)
     public void testBoardCreationFromPlusButtonOnHeader(){
-        int before = getBoardsCount();
-        clickOnPlusButtonOnHeader();
-        selectCreateBoardFromDropDown();
+        int before = app.getBoardsCount();
+        app.clickOnPlusButtonOnHeader();
+        app.selectCreateBoardFromDropDown();
         String boardName = "My plan3";
-        fillBoardCreationForm(boardName);
-        click(By.xpath("//*[@class='_1vk4y48RR5OmqE']"));
-        click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
-        clickCreateButton();
-        String createdBoardName = getBoardNameFromBoardPage();
-        returnToHomePage();
-        int after = getBoardsCount();
+        app.fillBoardCreationForm(boardName);
+        app.click(By.xpath("//*[@class='_1vk4y48RR5OmqE']"));
+        app.click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
+        app.clickCreateButton();
+        String createdBoardName = app.getBoardNameFromBoardPage();
+        app.returnToHomePage();
+        int after = app.getBoardsCount();
         Assert.assertEquals(after, before+1);
         Assert.assertEquals(createdBoardName.toLowerCase(), boardName.toLowerCase());
     }
@@ -45,11 +42,11 @@ public class BoardCreationTests extends TestBase {
 
     @Test(enabled = false)
     public void testBoardCreation(){
-        Assert.assertFalse(isUserLoggedOut());
-        click(By.xpath("//*[@name='add']"));
-        click(By.xpath("//*[contains(text(),'Create Board')]"));
-        type(By.xpath("//*[@placeholder='Add board title']"),"My plans2");
-        clickCreateButton();
+        Assert.assertFalse(app.isUserLoggedOut());
+        app.click(By.xpath("//*[@name='add']"));
+        app.click(By.xpath("//*[contains(text(),'Create Board')]"));
+        app.type(By.xpath("//*[@placeholder='Add board title']"),"My plans2");
+        app.clickCreateButton();
     }
 
 }

@@ -1,6 +1,5 @@
 package com.trello.qa;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,16 +7,16 @@ public class BoardDeletionTests extends TestBase {
 
     @Test
     public void deleteBoardFromHomePage(){
-        int before = getBoardsCount();
-        clickOnFirstBoard();
-        clickOnMore();
-        clickOnCloseBoard();
-        clickOnCloseBoardButton();
-        clickOnPermanentlyDeleteBoard();
-        clickOnDeleteButton();
+        int before = app.getBoardsCount();
+        app.clickOnFirstBoard();
+        app.clickOnMore();
+        app.clickOnCloseBoard();
+        app.clickOnCloseBoardButton();
+        app.clickOnPermanentlyDeleteBoard();
+        app.clickOnDeleteButton();
 
-        returnToHomePage();
-        int after = getBoardsCount();
+        app.returnToHomePage();
+        int after = app.getBoardsCount();
         Assert.assertEquals(after, before-1);
     }
 
