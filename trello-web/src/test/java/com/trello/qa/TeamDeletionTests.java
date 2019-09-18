@@ -7,12 +7,12 @@ public class TeamDeletionTests extends TestBase {
 
     @Test
     public void deleteTeamFromLeftNavMenu() throws InterruptedException {
-        int before = app.getTeamsCount();
-        app.clickOnFirstTeam();
-        app.openSettings();
-        app.deleteTeam();
-        app.returnToHomePage();
-        int after = app.getTeamsCount();
+        int before = app.getTeamHelper().getTeamsCount();
+        app.getTeamHelper().clickOnFirstTeam();
+        app.getTeamHelper().openSettings();
+        app.getTeamHelper().deleteTeam();
+       // app.returnToHomePage();
+        int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before-1);
     }
 

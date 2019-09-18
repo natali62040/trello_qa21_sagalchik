@@ -6,17 +6,18 @@ import org.testng.annotations.Test;
 public class BoardDeletionTests extends TestBase {
 
     @Test
-    public void deleteBoardFromHomePage(){
-        int before = app.getBoardsCount();
-        app.clickOnFirstBoard();
-        app.clickOnMore();
-        app.clickOnCloseBoard();
-        app.clickOnCloseBoardButton();
-        app.clickOnPermanentlyDeleteBoard();
-        app.clickOnDeleteButton();
+    public void deleteBoardFromHomePage() throws InterruptedException {
+        int before = app.getBoardHelper().getBoardsCount();
+        app.getBoardHelper().clickOnFirstBoard();
+        app.getBoardHelper().clickOnMore();
+        Thread.sleep(10);
+        app.getBoardHelper().clickOnCloseBoard();
+        app.getBoardHelper().clickOnCloseBoardButton();
+        app.getBoardHelper().clickOnPermanentlyDeleteBoard();
+        app.getBoardHelper().clickOnDeleteButton();
 
-        app.returnToHomePage();
-        int after = app.getBoardsCount();
+        app.sessionHelper.returnToHomePage();
+        int after = app.getBoardHelper().getBoardsCount();
         Assert.assertEquals(after, before-1);
     }
 
