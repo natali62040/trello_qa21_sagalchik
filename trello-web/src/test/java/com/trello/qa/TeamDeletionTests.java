@@ -6,12 +6,11 @@ import org.testng.annotations.Test;
 public class TeamDeletionTests extends TestBase {
 
     @Test
-    public void deleteTeamFromLeftNavMenu(){
+    public void deleteTeamFromLeftNavMenu() throws InterruptedException {
         int before = app.getTeamsCount();
         app.clickOnFirstTeam();
         app.openSettings();
         app.deleteTeam();
-
         app.returnToHomePage();
         int after = app.getTeamsCount();
         Assert.assertEquals(after, before-1);

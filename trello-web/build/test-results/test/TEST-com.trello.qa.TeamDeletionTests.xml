@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.trello.qa.TeamDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-15T14:42:10" hostname="DESKTOP-F9966VI" time="31.603">
+<testsuite name="com.trello.qa.TeamDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-18T14:03:49" hostname="DESKTOP-F9966VI" time="31.928">
   <properties/>
-  <testcase name="deleteTeamFromLeftNavMenu" classname="com.trello.qa.TeamDeletionTests" time="31.603"/>
+  <testcase name="deleteTeamFromLeftNavMenu" classname="com.trello.qa.TeamDeletionTests" time="31.928"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

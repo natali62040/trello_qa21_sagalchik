@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.trello.qa.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-15T14:41:03" hostname="DESKTOP-F9966VI" time="2.423">
+<testsuite name="com.trello.qa.BoardCreationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-09-18T14:02:42" hostname="DESKTOP-F9966VI" time="2.559">
   <properties/>
-  <testcase name="testBoardCreationFromPlusButtonOnHeader" classname="com.trello.qa.BoardCreationTests" time="2.423"/>
+  <testcase name="testBoardCreationFromPlusButtonOnHeader" classname="com.trello.qa.BoardCreationTests" time="2.559"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

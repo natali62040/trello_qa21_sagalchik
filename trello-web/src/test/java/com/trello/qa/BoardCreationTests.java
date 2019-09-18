@@ -22,7 +22,7 @@ public class BoardCreationTests extends TestBase {
         }
     }
 
-    @Test//(enabled = false)
+    @Test
     public void testBoardCreationFromPlusButtonOnHeader(){
         int before = app.getBoardsCount();
         app.clickOnPlusButtonOnHeader();
