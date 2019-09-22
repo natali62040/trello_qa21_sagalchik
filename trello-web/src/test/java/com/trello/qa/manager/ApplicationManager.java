@@ -1,10 +1,9 @@
-package com.trello.qa;
+package com.trello.qa.manager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,9 +12,21 @@ public class ApplicationManager {
     TeamHelper teamHelper;
     BoardHelper boardHelper;
     SessionHelper sessionHelper;
+    private String browser;
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void init() {
-        driver = new ChromeDriver();
+        if(browser.equals(BrowserType.CHROME)){//equels with selenium
+            driver = new ChromeDriver();
+        }if(browser.equals(BrowserType.FIREFOX)){//equels with selenium
+            driver = new FirefoxDriver();}
+      //  }if(browser.equals(BrowserType.IE)){
+       //     driver = new FirefoxDriver();
+
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();//max screen
         teamHelper = new TeamHelper(driver);

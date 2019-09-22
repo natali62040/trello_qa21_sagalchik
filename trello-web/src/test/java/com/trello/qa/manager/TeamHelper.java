@@ -1,4 +1,4 @@
-package com.trello.qa;
+package com.trello.qa.manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,13 +11,11 @@ public class TeamHelper extends HelperBase {
         super(driver);
     }
 
-    protected String getTeamNameFromTeamPage() {
-
+    public String getTeamNameFromTeamPage() {
         return driver.findElement(By.cssSelector("h1")).getText();
     }
 
     public void clickContinueButton() {
-
         click(By.cssSelector("[type=submit]"));
     }
 
@@ -27,7 +25,6 @@ public class TeamHelper extends HelperBase {
     }
 
     public void selectCreateTeamFromDropDown() {
-
         click(By.cssSelector("[data-test-id='header-create-team-button']"));
     }
 
@@ -57,4 +54,17 @@ public class TeamHelper extends HelperBase {
         click(By.xpath("//*[@class='_mtkwfAlvk6O3f']/../../..//li"));
     }
 
+    public void initEditTeamProfile() {
+        click(By.cssSelector(".js-edit-profile"));
+        //waitForElementAndClick(By.cssSelector(".js-edit-profile"), 10);
+    }
+
+    public void changeTeamProfile(String name, String description) {
+        type(By.name("displayName"), name);
+        type(By.name("desc"), description);
+    }
+
+    public void confirmEditTeam() {
+        click(By.cssSelector(".js-submit-profile"));
+    }
 }

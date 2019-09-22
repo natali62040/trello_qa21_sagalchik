@@ -1,4 +1,4 @@
-package com.trello.qa;
+package com.trello.qa.tests;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -11,7 +11,7 @@ public class BoardCreationTests extends TestBase {
     @BeforeClass
     public void ensurePreconditions(){
         if(!app.getSessionHelper().isUserLoggedIn()){
-            app.sessionHelper.login("natalisagalchik@gmail.com", "Sn271206");
+            app.getSessionHelper().login("natalisagalchik@gmail.com", "Sn271206");
         }
     }
 
@@ -44,8 +44,8 @@ public class BoardCreationTests extends TestBase {
     public void testBoardCreation(){
         Assert.assertFalse(app.getSessionHelper().isUserLoggedOut());
         app.getSessionHelper().click(By.xpath("//*[@name='add']"));
-        app.sessionHelper.click(By.xpath("//*[contains(text(),'Create Board')]"));
-        app.sessionHelper.type(By.xpath("//*[@placeholder='Add board title']"),"My plans2");
+        app.getSessionHelper().click(By.xpath("//*[contains(text(),'Create Board')]"));
+        app.getSessionHelper().type(By.xpath("//*[@placeholder='Add board title']"),"My plans2");
         app.getBoardHelper().clickCreateButton();
     }
 

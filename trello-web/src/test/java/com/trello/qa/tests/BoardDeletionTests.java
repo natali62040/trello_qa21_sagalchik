@@ -1,4 +1,4 @@
-package com.trello.qa;
+package com.trello.qa.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +16,7 @@ public class BoardDeletionTests extends TestBase {
         app.getBoardHelper().clickOnPermanentlyDeleteBoard();
         app.getBoardHelper().clickOnDeleteButton();
 
-        app.sessionHelper.returnToHomePage();
+        app.getSessionHelper().returnToHomePage();
         int after = app.getBoardHelper().getBoardsCount();
         Assert.assertEquals(after, before-1);
     }

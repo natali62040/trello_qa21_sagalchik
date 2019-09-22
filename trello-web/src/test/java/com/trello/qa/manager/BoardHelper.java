@@ -1,6 +1,7 @@
-package com.trello.qa;
+package com.trello.qa.manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +12,7 @@ public class BoardHelper extends HelperBase{
         super(driver);
     }
 
-    protected String getBoardNameFromBoardPage() {
+    public String getBoardNameFromBoardPage() {
         return driver.findElement(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li[1]")).getText();
     }
 
@@ -67,5 +68,13 @@ public class BoardHelper extends HelperBase{
     public void clickOnFirstBoard() {
 
         click(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li[1]"));
+    }
+
+    public void clickOnBoardButton() {
+        click(By.xpath("//*[@class='icon-board icon-sm OiX3P2i2J92Xat']"));
+    }
+
+    public void fillBoardNameForm(String boardName1) {
+        type(By.xpath("//div[@class='board-header-btn mod-board-name inline-rename-board js-rename-board']"),boardName1+ Keys.ENTER);
     }
 }
