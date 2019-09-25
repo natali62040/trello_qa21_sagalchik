@@ -1,7 +1,6 @@
 package com.trello.qa.manager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,8 +19,8 @@ public class BoardHelper extends HelperBase{
         click(By.xpath("//*[@class='_3UeOvlU6B5KUnS uj9Ovoj4USRUQz _2MgouXHqRQDP_5']"));
     }
 
-    public void fillBoardCreationForm(String boardName) {
-        type(By.xpath("//*[@class ='_23NUW98LaZfBpQ']"),boardName);//*[@class ='_23NUW98LaZfBpQ']
+    public void fillBoardCreationForm(BoardData board) {
+        type(By.xpath("//*[@class ='_23NUW98LaZfBpQ']"), board.getBoardName());
     }
 
     public void selectCreateBoardFromDropDown() {
@@ -74,7 +73,25 @@ public class BoardHelper extends HelperBase{
         click(By.xpath("//*[@class='icon-board icon-sm OiX3P2i2J92Xat']"));
     }
 
-    public void fillBoardNameForm(String boardName1) {
-        type(By.xpath("//div[@class='board-header-btn mod-board-name inline-rename-board js-rename-board']"),boardName1+ Keys.ENTER);
+
+    public void changeBoardName(String newName) {
+        driver.findElement(By.cssSelector(".js-rename-board")).click();
+        driver.findElement(By.cssSelector("input.js-board-name-input")).sendKeys(newName);
+        returnToHomePage();
+    }
+
+    public boolean isBoardPresent() {
+        return getBoardsCount() > 0;
+    }
+
+    public void createBoard() {
+        clickOnPlusButtonOnHeader();
+        selectCreateBoardFromDropDown();
+        String boardName = "My plan3";
+        fillBoardCreationForm(new BoardData().withBoardName(boardName));
+        click(By.xpath("//*[@class='_1vk4y48RR5OmqE']"));
+        click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
+        clickCreateButton();
+        returnToHomePage();
     }
 }

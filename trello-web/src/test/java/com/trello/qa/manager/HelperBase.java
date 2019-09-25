@@ -17,9 +17,11 @@ public class HelperBase {
     }
 
     public void type(By locator, String text) {
+        if(text!=null){
         driver.findElement(locator).click();
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
+        }
     }
 
     public boolean isElementPresent(By locator) {
@@ -28,7 +30,7 @@ public class HelperBase {
 
     public void returnToHomePage() {
         if(isElementPresent(By.cssSelector("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))){
-            new WebDriverWait(driver, 20)
+            new WebDriverWait(driver, 40)
                     .until(ExpectedConditions.stalenessOf(driver.
                             findElement(By.cssSelector("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))));
             click(By.cssSelector("a[href='/']"));

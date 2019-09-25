@@ -1,9 +1,17 @@
 package com.trello.qa.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class BoardDeletionTests extends TestBase {
+
+    @BeforeMethod
+    public void preconditions(){
+        if(!app.getBoardHelper().isBoardPresent()){
+            app.getBoardHelper().createBoard();
+        }
+    }
 
     @Test
     public void deleteBoardFromHomePage() throws InterruptedException {
