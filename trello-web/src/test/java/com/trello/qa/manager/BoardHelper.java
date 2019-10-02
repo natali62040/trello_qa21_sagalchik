@@ -70,7 +70,7 @@ public class BoardHelper extends HelperBase{
     }
 
     public void clickOnBoardButton() {
-        click(By.xpath("//*[@class='icon-board icon-sm OiX3P2i2J92Xat']"));
+        click(By.xpath("//*[@class='icon-board icon-sm _2aV_KY1gTq1qWc']"));
     }
 
 

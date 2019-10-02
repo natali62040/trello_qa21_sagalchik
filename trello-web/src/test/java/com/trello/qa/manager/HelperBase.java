@@ -29,15 +29,24 @@ public class HelperBase {
     }
 
     public void returnToHomePage() {
-        if(isElementPresent(By.cssSelector("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))){
+        if(isElementPresent(By.xpath("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))){
             new WebDriverWait(driver, 40)
                     .until(ExpectedConditions.stalenessOf(driver.
-                            findElement(By.cssSelector("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))));
+                            findElement(By.xpath("._3gUubwRZDWaOF0._2WhIqhRFBTG7Ry._2NubQcQM83YCVV"))));
             click(By.cssSelector("a[href='/']"));
             click(By.cssSelector("a[href='/']"));
         } else
             click(By.cssSelector("a[href='/']"));
     }
+
+    public void goHomePage() throws InterruptedException {
+        Thread.sleep(10000);
+        click(By.cssSelector("[href='/']"));
+        click(By.cssSelector("[href='/']"));
+        driver.navigate().refresh();
+    }
+
+
 
     public void clickOnPlusButtonOnHeader() {
 

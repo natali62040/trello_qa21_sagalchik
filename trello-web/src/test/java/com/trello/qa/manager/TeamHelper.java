@@ -20,6 +20,7 @@ public class TeamHelper extends HelperBase {
     }
 
     public void fillTeamCreationForm(TeamData team) {
+
         type(By.cssSelector("[data-test-id='header-create-team-name-input']"), team.getTeamName());
         type(By.cssSelector("textarea"), team.getDescription());
     }
@@ -46,8 +47,9 @@ public class TeamHelper extends HelperBase {
         click(By.cssSelector(".js-confirm"));
     }
 
-    public void openSettings() {
-        click(By.cssSelector(".icon-gear.icon-sm.OiX3P2i2J92Xat"));
+    public void openSettings() throws InterruptedException {
+        Thread.sleep(5000);
+        click(By.cssSelector("ul .icon-gear.icon-sm"));
     }
 
     public void clickOnFirstTeam() {

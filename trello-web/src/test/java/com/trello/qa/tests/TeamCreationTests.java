@@ -1,6 +1,7 @@
 package com.trello.qa.tests;
 
 import com.trello.qa.manager.TeamData;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -62,15 +63,34 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().fillTeamCreationForm(new TeamData().withTeamName("h").withDescription("g"));
         app.getTeamHelper().clickContinueButton();
         String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
-        app.getTeamHelper().returnToHomePage();
+        Thread.sleep(7000);
+        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        app.getTeamHelper().goHomePage();
+        //app.getTeamHelper().returnToHomePage();
         int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before+1);
         Assert.assertEquals(createdTeamName.toLowerCase(),teamName.toLowerCase());
     }
 
+    @Test(dataProvider = "validTeamsfromcsv")
+    public void testTeamCreationFromPlusButtonOnHeaderWithDataProviderFromcsv (TeamData team) throws InterruptedException {
+        int before = app.getTeamHelper().getTeamsCount();
+        app.getTeamHelper().clickOnPlusButtonOnHeader();
+        app.getTeamHelper().selectCreateTeamFromDropDown();
+        //String teamName = "qa21";
+        app.getTeamHelper().fillTeamCreationForm(team);
+        app.getTeamHelper().clickContinueButton();
+        //String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
+        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        app.getTeamHelper().goHomePage();
+        //app.getTeamHelper().returnToHomePage();
+        int after = app.getTeamHelper().getTeamsCount();
+        Assert.assertEquals(after, before+1);
+        //Assert.assertEquals(createdTeamName.toLowerCase(),teamName.toLowerCase());
+    }
+
     @Test(dataProvider = "validTeams")
-    public void testTeamCreationFromPlusButtonOnHeaderWithDataProvider (String teamName, String description)
-    {
+    public void testTeamCreationFromPlusButtonOnHeaderWithDataProvider (String teamName, String description) throws InterruptedException {
         TeamData team = new TeamData().withTeamName(teamName).withDescription(description);
         int before = app.getTeamHelper().getTeamsCount();
         app.getTeamHelper().clickOnPlusButtonOnHeader();
@@ -79,7 +99,9 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().fillTeamCreationForm(team);
         app.getTeamHelper().clickContinueButton();
         //String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
-        app.getTeamHelper().returnToHomePage();
+        //app.getTeamHelper().returnToHomePage();
+        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        app.getTeamHelper().goHomePage();
         int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before+1);
         //Assert.assertEquals(createdTeamName.toLowerCase(),teamName.toLowerCase());

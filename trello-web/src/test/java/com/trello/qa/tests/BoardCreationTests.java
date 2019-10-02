@@ -42,7 +42,7 @@ public class BoardCreationTests extends TestBase {
     }
 
     @Test(enabled = false)
-    public void testBoardCreationFromPlusButtonOnHeader(){
+    public void testBoardCreationFromPlusButtonOnHeader() throws InterruptedException {
         int before = app.getBoardHelper().getBoardsCount();
         app.getBoardHelper().clickOnPlusButtonOnHeader();
         app.getBoardHelper().selectCreateBoardFromDropDown();
@@ -52,14 +52,15 @@ public class BoardCreationTests extends TestBase {
         app.getBoardHelper().click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
         app.getBoardHelper().clickCreateButton();
         String createdBoardName = app.getBoardHelper().getBoardNameFromBoardPage();
-        app.getBoardHelper().returnToHomePage();
+        app.getBoardHelper().goHomePage();
+        //app.getBoardHelper().returnToHomePage();
         int after = app.getBoardHelper().getBoardsCount();
         Assert.assertEquals(after, before+1);
         Assert.assertEquals(createdBoardName.toLowerCase(), boardName.toLowerCase());
     }
 
     @Test(dataProvider = "validBoards")
-    public void testBoardCreationFromPlusButtonOnHeaderWithDataProvider(String boardName){
+    public void testBoardCreationFromPlusButtonOnHeaderWithDataProvider(String boardName) throws InterruptedException {
         BoardData board = new BoardData().withBoardName(boardName);
         int before = app.getBoardHelper().getBoardsCount();
         app.getBoardHelper().clickOnPlusButtonOnHeader();
@@ -70,7 +71,8 @@ public class BoardCreationTests extends TestBase {
         app.getBoardHelper().click(By.xpath("//*[@class='_1uK2vQ_aMRS2NU'][contains(text(),'No team')]"));
         app.getBoardHelper().clickCreateButton();
         //String createdBoardName = app.getBoardHelper().getBoardNameFromBoardPage();
-        app.getBoardHelper().returnToHomePage();
+        //app.getBoardHelper().returnToHomePage();
+        app.getBoardHelper().goHomePage();
         int after = app.getBoardHelper().getBoardsCount();
         Assert.assertEquals(after, before+1);
         //Assert.assertEquals(createdBoardName.toLowerCase(), boardName.toLowerCase());

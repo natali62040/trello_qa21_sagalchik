@@ -24,7 +24,8 @@ public class BoardDeletionTests extends TestBase {
         app.getBoardHelper().clickOnPermanentlyDeleteBoard();
         app.getBoardHelper().clickOnDeleteButton();
 
-        app.getSessionHelper().returnToHomePage();
+        //app.getSessionHelper().returnToHomePage();
+        app.getBoardHelper().goHomePage();
         int after = app.getBoardHelper().getBoardsCount();
         Assert.assertEquals(after, before-1);
     }
