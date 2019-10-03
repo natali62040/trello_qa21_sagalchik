@@ -64,8 +64,8 @@ public class BoardHelper extends HelperBase{
         click(By.xpath("//*[@class ='board-menu-navigation-item-link js-open-more']"));
     }
 
-    public void clickOnFirstBoard() {
-
+    public void clickOnFirstBoard() throws InterruptedException {
+        Thread.sleep(10000);
         click(By.xpath("//h3[contains(text(),'Personal Boards')]/../..//li[1]"));
     }
 
@@ -74,10 +74,11 @@ public class BoardHelper extends HelperBase{
     }
 
 
-    public void changeBoardName(String newName) {
+    public void changeBoardName(String newName) throws InterruptedException {
         driver.findElement(By.cssSelector(".js-rename-board")).click();
         driver.findElement(By.cssSelector("input.js-board-name-input")).sendKeys(newName);
-        returnToHomePage();
+        goHomePage();
+        //returnToHomePage();
     }
 
     public boolean isBoardPresent() {

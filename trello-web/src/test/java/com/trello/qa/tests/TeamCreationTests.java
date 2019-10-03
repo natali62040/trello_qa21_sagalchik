@@ -60,12 +60,12 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().clickOnPlusButtonOnHeader();
         app.getTeamHelper().selectCreateTeamFromDropDown();
         String teamName = "qa21";
-        app.getTeamHelper().fillTeamCreationForm(new TeamData().withTeamName("h").withDescription("g"));
+        app.getTeamHelper().fillTeamCreationForm(new TeamData().withTeamName(teamName).withDescription("g"));
         app.getTeamHelper().clickContinueButton();
-        String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
-        Thread.sleep(7000);
-        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        Thread.sleep(10000);
+        app.getTeamHelper().clickOnButtonDoThisLater();
         app.getTeamHelper().goHomePage();
+        String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
         //app.getTeamHelper().returnToHomePage();
         int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before+1);
@@ -81,7 +81,7 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().fillTeamCreationForm(team);
         app.getTeamHelper().clickContinueButton();
         //String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
-        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        app.getTeamHelper().clickOnButtonDoThisLater();
         app.getTeamHelper().goHomePage();
         //app.getTeamHelper().returnToHomePage();
         int after = app.getTeamHelper().getTeamsCount();
@@ -100,12 +100,13 @@ public class TeamCreationTests extends TestBase {
         app.getTeamHelper().clickContinueButton();
         //String createdTeamName = app.getTeamHelper().getTeamNameFromTeamPage();
         //app.getTeamHelper().returnToHomePage();
-        app.getTeamHelper().click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+        app.getTeamHelper().clickOnButtonDoThisLater();
         app.getTeamHelper().goHomePage();
         int after = app.getTeamHelper().getTeamsCount();
         Assert.assertEquals(after, before+1);
         //Assert.assertEquals(createdTeamName.toLowerCase(),teamName.toLowerCase());
     }
+
 
     @Test(enabled = false)
     public void testTeamCreationFromLeftNavMenu() throws InterruptedException {

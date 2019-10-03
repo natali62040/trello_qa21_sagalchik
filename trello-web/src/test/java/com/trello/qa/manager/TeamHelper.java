@@ -74,6 +74,10 @@ public class TeamHelper extends HelperBase {
         return getTeamsCount() > 0;
     }
 
+    public void clickOnButtonDoThisLater() {
+        click(By.xpath("//a[@class='eg0KI5SqghoOFd']"));
+    }
+
     public void createTeam() {
         clickOnPlusButtonOnHeader();
         selectCreateTeamFromDropDown();

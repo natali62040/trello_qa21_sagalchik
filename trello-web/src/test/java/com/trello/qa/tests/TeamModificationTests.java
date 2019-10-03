@@ -13,7 +13,7 @@ public class TeamModificationTests extends TestBase {
         }
     }
 
-    @Test
+    @Test(enabled = false)
     public  void testRenameTeam() throws InterruptedException {
         app.getTeamHelper().clickOnFirstTeam();
         app.getTeamHelper().openSettings();
@@ -21,7 +21,8 @@ public class TeamModificationTests extends TestBase {
         app.getTeamHelper().changeTeamProfile("hh","hha");
         app.getTeamHelper().confirmEditTeam();
         Thread.sleep(5000);
-        app.getTeamHelper().returnToHomePage();
+        //app.getTeamHelper().returnToHomePage();
+        app.getTeamHelper().goHomePage();
 
         Assert.assertEquals(app.getTeamHelper().getTeamNameFromTeamPage(),"hh");
     }
