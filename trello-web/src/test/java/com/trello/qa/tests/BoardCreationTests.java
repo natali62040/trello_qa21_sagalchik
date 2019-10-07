@@ -3,17 +3,17 @@ package com.trello.qa.tests;
 import com.trello.qa.manager.BoardData;
 import com.trello.qa.manager.TeamData;
 import org.openqa.selenium.By;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class BoardCreationTests extends TestBase {
+
 
     @DataProvider
     public Iterator<Object[]> validBoards(){
@@ -61,6 +61,7 @@ public class BoardCreationTests extends TestBase {
 
     @Test(dataProvider = "validBoards")
     public void testBoardCreationFromPlusButtonOnHeaderWithDataProvider(String boardName) throws InterruptedException {
+
         BoardData board = new BoardData().withBoardName(boardName);
         int before = app.getBoardHelper().getBoardsCount();
         app.getBoardHelper().clickOnPlusButtonOnHeader();

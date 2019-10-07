@@ -13,5 +13,10 @@ public class BoardData {
         return boardName;
     }
 
-
+    @Override
+    public String toString() {
+        return "BoardData{" +
+                "boardName='" + boardName + '\'' +
+                '}';
+    }
 }
