@@ -1,0 +1,46 @@
+20:58:17.888 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [href='/login']
+20:58:17.917 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [href='/login']found
+20:58:18.207 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=email]
+20:58:20.645 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=email]found
+20:58:20.706 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=email]
+20:58:20.720 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=email]found
+20:58:20.752 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=email]
+20:58:20.768 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=email]found
+20:58:20.912 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=password]
+20:58:20.930 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=password]found
+20:58:21.008 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=password]
+20:58:21.026 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=password]found
+20:58:21.050 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [type=password]
+20:58:21.061 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [type=password]found
+20:58:21.114 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.id: login
+20:58:21.129 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.id: loginfound
+20:58:21.256 [Test worker] INFO  com.trello.qa.tests.TestBase - start testdeleteBoardFromHomePage with parameters[]
+20:58:21.281 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:27.482 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:27.482 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:27.504 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:27.505 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:27.518 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:27.519 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:27.531 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:37.532 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li[1]
+20:58:37.547 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//li[1]found
+20:58:37.650 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //*[@class ='board-menu-navigation-item-link js-open-more']
+20:58:38.132 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //*[@class ='board-menu-navigation-item-link js-open-more']found
+20:58:38.261 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //*[@class='board-menu-navigation-item-link js-close-board']
+20:58:38.282 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //*[@class='board-menu-navigation-item-link js-close-board']found
+20:58:38.342 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //*[@class='js-confirm full negate']
+20:58:38.380 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //*[@class='js-confirm full negate']found
+20:58:38.481 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //*[@class='quiet js-delete']
+20:58:38.497 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //*[@class='quiet js-delete']found
+20:58:38.550 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //*[@class='js-confirm full negate']
+20:58:38.566 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //*[@class='js-confirm full negate']found
+20:58:48.617 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [href='/']
+20:58:48.634 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [href='/']found
+20:58:48.730 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.cssSelector: [href='/']
+20:58:48.745 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.cssSelector: [href='/']found
+20:58:49.301 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:51.385 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:51.386 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - Start search elementBy.xpath: //h3[contains(text(),'Personal Boards')]/../..//li
+20:58:51.403 [Test worker] INFO  c.t.q.m.ApplicationManager$MyListener - By.xpath: //h3[contains(text(),'Personal Boards')]/../..//lifound
+20:58:51.408 [Test worker] INFO  com.trello.qa.tests.TestBase - stop testdeleteBoardFromHomePage

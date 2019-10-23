@@ -1,9 +1,15 @@
 package com.trello.qa.manager;
 
+import com.google.common.io.Files;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
     WebDriver driver;
@@ -46,8 +52,6 @@ public class HelperBase {
         driver.navigate().refresh();
     }
 
-
-
     public void clickOnPlusButtonOnHeader() {
 
         click(By.cssSelector("[data-test-id='header-create-menu-button']"));
@@ -56,5 +60,16 @@ public class HelperBase {
     public void waitForElementAndClick(By locator, int time){
         new WebDriverWait(driver, time)
                 .until(ExpectedConditions.elementToBeClickable(locator)).click();
+    }
+
+    public void takescreenshot(){
+        File tmp = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screen = new File("src/test/resources/Screenshots/screen"+ System.currentTimeMillis()+"png");
+
+        try {
+            Files.copy(tmp, screen);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

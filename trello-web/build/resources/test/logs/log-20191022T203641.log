@@ -1,0 +1,2 @@
+20:37:00.016 [Test worker] INFO  com.trello.qa.tests.TestBase - start testdeleteBoardFromHomePage with parameters[]
+20:37:29.572 [Test worker] INFO  com.trello.qa.tests.TestBase - stop testdeleteBoardFromHomePage

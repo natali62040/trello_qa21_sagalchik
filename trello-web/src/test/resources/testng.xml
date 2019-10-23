@@ -11,6 +11,7 @@
             <class name="com.trello.qa.tests.BoardDeletionTests"/>
             <class name="com.trello.qa.tests.TeamModificationTests"/>
             <class name="com.trello.qa.tests.BoardModificationTests"/>
+            <class name="com.trello.qa.tests.UserModificationTests"/>
         </classes>
     </test>
 </suite>
