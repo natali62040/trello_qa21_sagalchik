@@ -2,8 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="first-project.main" target="1.8" />
+      <module name="first-project.test" target="1.8" />
+      <module name="Natali.trello-mob.main" target="1.8" />
+      <module name="Natali.trello-mob.test" target="1.8" />
+      <module name="Natali.trello-web.main" target="1.8" />
+      <module name="Natali.trello-web.test" target="1.8" />
+      <module name="trello-mob.main" target="1.8" />
+      <module name="trello-mob.test" target="1.8" />
       <module name="trello-web.main" target="1.8" />
       <module name="trello-web.test" target="1.8" />
+      <module name="trello_qa21_sagalchik.trello-web.main" target="1.8" />
+      <module name="trello_qa21_sagalchik.trello-web.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,10 +1,7 @@
 package com.trello.qa.tests;
 
-import com.trello.qa.manager.BoardData;
-import com.trello.qa.manager.TeamData;
+import com.trello.qa.model.BoardData;
 import org.openqa.selenium.By;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 

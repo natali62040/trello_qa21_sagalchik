@@ -1,7 +1,6 @@
 package com.trello.qa.tests;
 
-import com.trello.qa.manager.TeamData;
-import org.openqa.selenium.By;
+import com.trello.qa.model.TeamData;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
